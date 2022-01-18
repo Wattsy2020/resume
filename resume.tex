@@ -1,0 +1,188 @@
+\documentclass[12pt]{resume-openfont}
+
+\pagestyle{fancy}
+\resetHeaderAndFooter
+
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
+
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[3]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill \location{#3}\fakeNewLine}
+\newcommand{\resumeHeadingShort}[2]{\runsubsection{\uppercase{#1}}\hfill \location{#2}\fakeNewLine\\}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
+\descript{#2}\fakeNewLine}
+
+% Create project heading. Parameters: Name, link, Tech stack
+\newcommand{\projectHeading}[3]{\Project{#1}{#2}
+\descript{#3}\\}
+
+\newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
+\descript{#3 | #4}\\}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
+ 
+%--------------------------------------------------------------
+\begin{document}
+
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+\newcommand{\yourName}{Liam Watts}
+\newcommand{\yourEmail}{lwat0536@uni.sydney.edu.au}
+\newcommand{\yourPhone}{0478 214 655}
+\newcommand{\githubUserName}{Wattsy2020}
+\newcommand{\linkedInUserName}{liam-watts}
+
+\begin{center}
+    \Huge \scshape \latoRegular{\yourName} \\ \vspace{1pt}
+    \small \href{mailto:\yourEmail}{\underline{\yourEmail}}  $|$  \yourPhone $|$ 
+    \href{https://www.linkedin.com/in/\linkedInUserName}{\underline{linkedIn/\linkedInUserName}} $|$
+    \href{https://github.com/\githubUserName}{\underline{github/\githubUserName}} 
+\end{center}
+
+%--------------------------------------------------------------
+%     Personal summary
+%--------------------------------------------------------------
+\section{Summary}
+I am a Computer Science Honours graduate from the University of Sydney, where I completed a thesis on Few-Shot Learning in Natural Language Processing. I've been studying in the Machine Learning field for three years through taking courses in both University and Coursera, designing and applying models at Telstra and now through my research in NLP. Currently I'm at Australia's National Science Agency, CSIRO, researching NLP's applications in Medical Information Retrieval.
+
+%--------------------------------------------------------------
+%     Education
+%--------------------------------------------------------------
+\sectionsep
+\section{Education}
+\educationHeading{Bachelor of Advanced Studies (Honours) (Computer Science)}{University of Sydney}{85 WAM, First Class}{Mar 2021 - Dec 2021}
+\begin{bullets}
+    \item Honours thesis: \emph{The Applications of Meta-learners to Few-Shot Incremental Learning} \\
+    Joint Supervisors: Senior Lecturer Josiah Poon, Lecturer Caren Han \\
+    \item Coursework: Natural Language Processing, Deep Learning, Advanced Machine Learning
+\end{bullets}
+
+\sectionsep
+
+\educationHeading{Bachelor of Computer Science with Distinction}{University of Wollongong}{89 WAM}{Feb 2018 - Dec 2020}
+\begin{bullets}
+    \item Major in Big Data
+    \item International exchange to Singapore and Dubai in 2019
+    \item Coursework: Machine Learning Algorithms and Applications, Computational Intelligence, Linear Algebra and Groups, Advanced Engineering Mathematics and Statistics
+\end{bullets}
+
+%--------------------------------------------------------------
+%     Experience
+%--------------------------------------------------------------
+\sectionsep
+\section{Employment}
+\resumeHeading{CSIRO}{Student Researcher}{Dec 2021 - Mar 2022}
+\begin{bullets}
+    \item I'm working in the Data61 Language and Social Sciences team under the supervision of Dr. Sarvnaz Karimi and Dr. Maciej Rybinsky
+    \item I've completed a literature review of Neural IR methods, trained the 3 billion parameter T5 model on a computing cluster with slurm, huggingface transformers and deepspeed
+    \item Reimplemented the best base retrieval method of TREC2021 Clinical Trials track and developed an improved version with similar nDCG@10 for a 10x smaller model
+    %\item Reimplementation of IR metrics and thorough examination of the debate there, analysis of our techniques that I am using to write a paper (building a research narrative around unjudged documents and selection of models to evaluate having a large impact on scores, arguing that we need to evaluate all models including the non neural baselines to be fair)
+    \item Currently I'm designing a method for rephrasing retrieval of clinical trials as an NLI problem to improve factual accuracy. In the future I will write and publish a paper describing this algorithm
+\end{bullets}
+\sectionsep
+
+\resumeHeading{Telstra}{Data Analytics and Management Summer Vacationer}{Nov 2020 – Feb 2021}
+\begin{bullets}
+    \item I performed feature engineering for large amounts (1-5Gb) of unstructured event data with Numpy and Pandas
+    \item Then trained LSTMs to perform time series classification on the event data using Tensorflow
+    \item I optimised the model for the particular business problem, focusing on the precision metric. Then I assisted in deploying the model to production
+\end{bullets}
+\sectionsep
+
+\resumeHeading{Telstra}{Data Analyst Intern}{Jan 2020 – Feb 2020}
+\begin{bullets}
+    \item Extracted customer demographic data from a large database using SQL
+    \item Created and presented visualisations of customer demographic data in Matplotlib
+    \item Designed a model to predict customer conversions and deployed it to AWS
+\end{bullets}
+\sectionsep
+
+\resumeHeading{Telstra}{Big Data Intern}{Nov 2018 - Dec 2018}
+\begin{bullets}
+    \item Retrieved data from HIVE with SQL and Spark
+    \item Extracted features from data and performed analysis with Python and Pandas
+    \item Created an interactive graph with D3.js to visualise the results
+\end{bullets}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Projects
+%--------------------------------------------------------------
+%\sectionsep
+\section{Projects}
+\projectHeading{Honours Thesis}{https://github.com/Wattsy2020/HonoursThesis}{2021}
+\begin{bullets}
+    \item My thesis applied Few-shot learning with Meta-Learners to problems more grounded in the real world
+    \item I identified a pattern of unrealistic evaluation methods in Meta-Learning and argued that they are better applied to Incremental Learning
+    \item I identified limitations in and improved on the few incremental meta-learners available
+    \item Through this project I've developed as a researcher. I learnt how to critically review literature, find a research problem, design solutions to said problem, perform experiments, give analysis and communicate this process through academic writing
+\end{bullets}
+\sectionsep
+
+\projectHeading{Neural Ordinary Differential Equations based Language Modelling}{https://github.com/Wattsy2020/LanguageODE}{2021}
+\begin{bullets}
+    \item A group work research project in which we applied Neural Ordinary Differential equations (NODE) to language modelling
+    \item I lead the project with my experience in NLP. I worked on designing and implementing new models to adapt NODE to language modelling, describing these techniques in the report along with editing
+    \item We introduced improvements to our baseline NODE model but found NODE models, in general, are not suited to this task and perform worse than traditional LSTMs and Transformers
+\end{bullets}
+\sectionsep
+
+\projectHeading{Valuetube}{https://gitlab.com/ValueTube/ValueTube}{2020}
+\begin{bullets}
+    \item A group work capstone project supervised by Professor Davoud Mougouei where we built an alternate version of YouTube with a recommendation algorithm based on suggesting people videos that match their values
+    \item I designed and implemented the recommendation algorithm, including sourcing and labelling a dataset of video comments and applying multiple NLP models to perform recommendation
+\end{bullets}
+\sectionsep
+
+\projectHeading{A Classical AI for playing Connect 4}{https://github.com/Wattsy2020/connect4-AI}{2018}
+I learnt the basics of classical AI algorithms for evaluating game trees, then created a program to play connect 4 in Java
+\sectionsep
+
+%--------------------------------------------------------------
+%     Extracurricular Learning
+%--------------------------------------------------------------
+\section{Extracurricular Learning}
+\resumeHeadingShort{Self Study of Japanese}{2019 Onwards}
+I started self-studying Japanese on my exchange to Singapore and am now able to converse, read books and the news
+\sectionsep
+
+\resumeHeading{Deep Learning Specialization}{Andrew Ng, Coursera}{2019}
+\sectionsep
+
+\resumeHeading{Machine Learning}{Andrew Ng, Coursera}{2019}
+\sectionsep
+
+\resumeHeading{Introduction to Data Science in Python}{University of Michigan, Coursera}{2018}
+\sectionsep
+
+\sectionsep
+
+%--------------------------------------------------------------
+%     Skills
+%--------------------------------------------------------------
+\section{Skills}
+\begin{skillList}
+    \singleItem{Languages:}{Python, SQL, C++, JavaScript, Java, R}
+    \\
+    \singleItem{Libraries:}{Pytorch, Pytorch Lightning, Tensorflow, Transformers, Numpy, Pandas, Matplotlib}
+\end{skillList}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Awards
+%--------------------------------------------------------------
+\section{Awards}
+\resumeHeadingShort{UOW Global Honours Scholar}{2018-2020}
+\sectionsep
+
+\resumeHeadingShort{Westpac Young Technologist Scholarship}{2018-2020}
+\sectionsep
+
+\resumeHeadingShort{Dean's Merit List}{2018, 2020}
+\sectionsep
+
+\end{document}
